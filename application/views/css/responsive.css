@@ -1,0 +1,22 @@
+
+@media only screen and (max-width: 600px){
+aside{
+	display: none;
+}
+.support {
+	margin-top: 5px;
+    width: 58% !important;
+    background: #901543 !important;
+}
+.payment {
+    display: none;
+}
+.hotline{
+	width: 40%;
+    background-image: url(../img/bg-special.png) !important;
+    background-position: left top !important;
+    background-repeat: repeat !important;
+    padding: 10px !important;
+    margin-right: 2% !important;
+}
+}

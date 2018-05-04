@@ -1,0 +1,308 @@
+*{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #838383;
+}
+.special .thumbnail{
+	background: transparent !important;
+	border: 0px transparent;
+	box-shadow: none;
+}
+.special .caption{
+	text-transform: uppercase;
+}
+a:link, a:focus, a:visited{
+	color: #555555;
+	text-decoration: none;
+	text-decoration-line: none;
+	text-decoration-style: initial;
+	text-decoration-color: initial;
+	border-top-color: initial;
+	border-top-style: none;
+	border-top-width: initial;
+	border-right-color: initial;
+	border-right-style: none;
+	border-right-width: initial;
+	border-bottom-color: initial;
+	border-bottom-style: none;
+	border-bottom-width: initial;
+	border-left-color: initial;
+	border-left-style: none;
+	border-left-width: initial;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+}
+a:hover{
+	color: #bd2026;
+}
+header{
+	background-image: url(../img/bg-special.png);
+	background-repeat: -1;
+	width: 100%;
+	height: auto;
+}
+
+header img{
+	margin-top: 10px;
+}
+#imaginary_container{
+	margin: 25px 0px 20px 0px;
+}
+.stylish-input-group .input-group-addon{
+	border-radius: 0px 15px 15px 0px;
+	background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-radius: 15px 15px 15px 15px;
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+
+	border:0;
+	background:transparent;
+}
+.navbar{
+	background-image: url(../img/line.png);
+	background-position-x: left;
+	background-position-y: 1px;
+	background-size: initial;
+	background-repeat-x: repeat;
+	background-repeat-y: no-repeat;
+	background-attachment: initial;
+	background-origin: initial;
+	background-clip: initial;
+	background-color: transparent;
+	background-color: #ffffff;
+	border-bottom:  1px ridge #cdcdcd;
+}
+
+#home{
+	font-size: 25px;
+	margin-top: -5px;
+}
+ul.nav>li{
+	border: 1px solid transparent;
+}
+ul.nav>li.dropdown:hover{
+	background-color: #dbffdb;
+	border-top: 1px solid;
+}
+ul.nav>li.dropdown:hover>.dropdown-menu{
+	display: block;
+	z-index: 1;
+	background-color: #dbffdb;
+}
+.dropdown-menu>li{
+	padding: 10px;
+	background-image: url(../img/bullet-flower.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.nav>li:hover{
+
+}
+.nav>li>a>strong{
+	color: #555555;
+	font-weight: 600;
+	line-height: 10px;
+}
+
+.nav>li>a>strong:hover{
+	color: #bd2026;
+}
+
+.navbar-default .navbar-brand{
+	color: #ffffff;
+	font-family: time news roman;
+}
+
+#header form{
+	width: 250px;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a>strong:hover{
+	/*	background-color: #ffffff;*/
+	color: #bd2026;
+}
+
+.navbar{
+	margin-bottom: 10px;
+}
+/*............SLIDESHOW...................................*/
+.slideshow{
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+	height: auto;
+	max-width: 100%;
+}
+.panel-heading{
+	background-color: #ffffff;
+	box-shadow: none;
+	border: 0px;
+}
+.panel-body{
+	border-color: #ffffff;
+	border: transparent;
+	box-shadow: none;
+}
+.product .caption{
+	background-color: #F7F7F7;
+}
+.carousel-indicators .active{
+	background-color: #bd2026;
+}
+.carousel-indicators li{
+	background-color: #666;
+	margin: 0px 5px; 
+}
+ol.carousel-indicators{
+	margin: auto;
+}
+
+#sidebar1 strong{
+	color: #990000;
+}
+/*..............BANNER......................................................*/
+.banner{
+	background-image: url(../img/line.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	padding-top: 10px;
+}
+.hotline{
+	background-image: url(../img/bg-hot-line.png);
+	width: 316px;
+	height: 142px;
+	float: left;
+	margin-left: 10px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.payment{
+    margin-left: 15px;
+    width: 311px;
+    height: 142px;
+    position: relative;
+    display: block;
+    float: left;
+}
+.support{
+	float: left;
+	margin-left: 25px;
+	background-image: url(../img/bg-support-choose.png);
+    width: 470px;
+    height: 142px;
+    position: relative;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+.special-title{
+    position: relative;
+    display: block;
+    clear: both;
+    width: 100%;
+    background-image: url(../img/line.png);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    margin: 10px 0px 3px 0px;
+    
+    
+}
+.special-title h2{
+	text-transform: uppercase;
+	background-color: #ffffff;
+	color: #636363;
+	clear: both;
+	background-image: url(../img/icon-hyt.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 18px;
+	padding: 0px 35px 0px 30px;
+    width: 350px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.special {
+	background-image: url(../img/bg-special.png);
+	background-repeat: -1;
+	width: 100%;
+	height: auto;
+	padding-top: 20px;
+}
+/*....................HIEN THI SAN PHAM TRANG CHU...................................*/
+.noibat{
+	margin-top: 10px;
+}
+
+.noibat .thumbnail:hover{
+	box-shadow: 2px 2px 2px 2px;
+	margin-top: -10px;
+}
+
+.noibat .thumbnail h5 b{
+	color: #bd2026;
+}
+.giohoatuoi{
+	margin-top: 10px;
+}
+
+.giohoatuoi .thumbnail:hover{
+	box-shadow: 2px 2px 2px 2px;
+	margin-top: -10px;
+}
+
+.giohoatuoi .thumbnail h5 b{
+	color: #bd2026;
+}
+/*...........................CSS CHI TIET SAN PHAM........................*/
+.detail .caption{
+	background-color: #F7F7F7;
+	border-top: 1px solid #838383;
+	color: #bd2026;
+}
+.detail .caption a{
+	width: 100%;
+	font-weight: 600;
+	color: #ffffff;
+	font-size: 18px;
+}
+.detail .caption a:hover{
+	cursor: pointer;
+	background: -webkit-linear-gradient(top,#ef8d02,#f05e0b);
+}
+.describe .panel{
+	box-shadow: none;
+	background-color: #ffffff;
+}
+.describe .panel-heading{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.describe .panel-heading h4{
+	margin-bottom: -15px;
+}
+.describe .panel-body{
+	padding-top: 0px;
+}
+footer{
+	background-color: #b2b2a6;
+	width: 100%;
+	height: auto;
+	margin-top: 5px;
+	padding: 20px;
+}
+
+footer .footer{
+
+}
