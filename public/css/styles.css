@@ -39,7 +39,7 @@ a:hover{
 	color: #bd2026;
 }
 header{
-	background-image: url(../img/bg-special.png);
+	background-image: url(../img/transp_bg.png);
 	background-repeat: -1;
 	width: 100%;
 	height: auto;
@@ -77,13 +77,22 @@ header img{
 	background-origin: initial;
 	background-clip: initial;
 	background-color: transparent;
-	background-color: #ffffff;
+	background-color: #d1398c;
 	border-bottom:  1px ridge #cdcdcd;
+}
+
+span.icon-bar{
+	color: #ffffff;
 }
 
 #home{
 	font-size: 25px;
 	margin-top: -5px;
+	color: #ffffff;
+}
+
+.dropdown .caret{
+	color: #ffffff;
 }
 ul.nav>li{
 	border: 1px solid transparent;
@@ -107,7 +116,7 @@ ul.nav>li.dropdown:hover>.dropdown-menu{
 
 }
 .nav>li>a>strong{
-	color: #555555;
+	color: #ffffff;
 	font-weight: 600;
 	line-height: 10px;
 }
@@ -138,6 +147,7 @@ ul.nav>li.dropdown:hover>.dropdown-menu{
 }
 /*............SLIDESHOW...................................*/
 .slideshow{
+	margin-top: 5px;
 }
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
 	height: auto;
@@ -166,7 +176,13 @@ ul.nav>li.dropdown:hover>.dropdown-menu{
 ol.carousel-indicators{
 	margin: auto;
 }
+#sidebar1{
+	margin-top: 5px;
+}
 
+#sidebar1 .panel{
+	height: 342px;
+}
 #sidebar1 strong{
 	color: #990000;
 }
