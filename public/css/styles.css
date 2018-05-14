@@ -97,34 +97,41 @@ span.icon-bar{
 ul.nav>li{
 	border: 1px solid transparent;
 }
-ul.nav>li.dropdown:hover{
+/*ul.nav>li.dropdown:hover{
 	background-color: #dbffdb;
 	border-top: 1px solid;
+}*/
+ul.nav>li.dropdown strong{
+	text-transform: uppercase;
+	color: #ffffff;
 }
+ul.nav>li.dropdown strong:hover{
+	color: #bd2026;
+}
+
 ul.nav>li.dropdown:hover>.dropdown-menu{
 	display: block;
 	z-index: 1;
-	background-color: #dbffdb;
+	background-color: #d1398c;
+	opacity: 0.8;
 }
-.dropdown-menu>li{
-	padding: 10px;
-	background-image: url(../img/bullet-flower.png);
-	background-repeat: no-repeat;
-	background-position: left top;
+.dropdown-menu>li>a{
+	border-bottom: 1px solid #ffffff;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-.nav>li:hover{
-
+.dropdown-menu>li:hover{
+	color: #bd2026;
+	background-color: #CC66FF;
 }
+/*.dropdown-menu>li>strong:hover{
+		color: #bd2026;
+}*/
 .nav>li>a>strong{
 	color: #ffffff;
 	font-weight: 600;
 	line-height: 10px;
 }
-
-.nav>li>a>strong:hover{
-	color: #bd2026;
-}
-
 .navbar-default .navbar-brand{
 	color: #ffffff;
 	font-family: time news roman;
@@ -137,15 +144,11 @@ ul.nav>li.dropdown:hover>.dropdown-menu{
 	color: #ffffff;
 }
 
-.navbar-default .navbar-nav>li>a>strong:hover{
-	/*	background-color: #ffffff;*/
-	color: #bd2026;
-}
-
 .navbar{
 	margin-bottom: 10px;
 }
 /*............SLIDESHOW...................................*/
+
 .slideshow{
 	margin-top: 5px;
 }
@@ -166,6 +169,9 @@ ul.nav>li.dropdown:hover>.dropdown-menu{
 .product .caption{
 	background-color: #F7F7F7;
 }
+.carousel img,img,img{
+	border-radius: 4px 4px 4px 4px;
+}
 .carousel-indicators .active{
 	background-color: #bd2026;
 }
@@ -182,9 +188,17 @@ ol.carousel-indicators{
 
 #sidebar1 .panel{
 	height: 342px;
+	border: 1px solid #b1dab3;
+	background-color: #e7ffe2;
+}
+#sidebar1 .panel-heading{
+	background-image: linear-gradient(to bottom,#e7ffe2 0,#e7ffe2 100%);
+}
+#sidebar1 .panel-body{
+		color: #189001;
 }
 #sidebar1 strong{
-	color: #990000;
+	color: #189001;
 }
 /*..............BANNER......................................................*/
 .banner{
@@ -230,8 +244,8 @@ ol.carousel-indicators{
     background-image: url(../img/line.png);
     background-repeat: repeat-x;
     background-position: left bottom;
-    margin: 10px 0px 3px 0px;
-    
+    margin: 0px 0px 3px 0px;
+ 
     
 }
 .special-title h2{
@@ -256,14 +270,44 @@ ol.carousel-indicators{
 	height: auto;
 	padding-top: 20px;
 }
-/*....................HIEN THI SAN PHAM TRANG CHU...................................*/
+.special img{
+	 transition: transform .2s
+}
+.special img:hover{
+	    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+/*....................LEFT...................................*/
+.content .panel{
+	border: none;
+	box-shadow: none;
+}
+
+.content .caption{
+	background-color: #F7F7F7;
+}
+.panel-heading a{
+	color: #bd2026;
+}
+
+.panel-body{
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+
 .noibat{
 	margin-top: 10px;
+}
+.noibat .panel-heading{
+	    background-image: linear-gradient(to bottom,#ffe6dd 0,#ffe6dd 100%);
+}
+.noibat .panel{
+	background-color: #ffe6dd;
 }
 
 .noibat .thumbnail:hover{
 	box-shadow: 2px 2px 2px 2px;
-	margin-top: -10px;
+	margin-top: -5px;
 }
 
 .noibat .thumbnail h5 b{
@@ -272,14 +316,74 @@ ol.carousel-indicators{
 .giohoatuoi{
 	margin-top: 10px;
 }
-
+.giohoatuoi .panel-heading{
+	    background-image: linear-gradient(to bottom,#F7F7F7 0,#F7F7F7 100%);
+}
+.giohoatuoi .panel{
+	background-color: #F7F7F7;
+}
 .giohoatuoi .thumbnail:hover{
 	box-shadow: 2px 2px 2px 2px;
-	margin-top: -10px;
+	margin-top: -5px;
 }
 
 .giohoatuoi .thumbnail h5 b{
 	color: #bd2026;
+}
+.khuyenmai{
+	margin-top: 10px;
+}
+.khuyenmai .panel-heading{
+	    background-image: linear-gradient(to bottom,#F7F7F7 0,#F7F7F7 100%);
+}
+.khuyenmai .panel{
+	background-color: #F7F7F7;
+}
+.khuyenmai .thumbnail:hover{
+	box-shadow: 2px 2px 2px 2px;
+	margin-top: -5px;
+}
+
+.khuyenmai .thumbnail h5 b{
+	color: #bd2026;
+}
+/*....................RIGHT...................................*/
+.right{
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	border: 1px solid #d4e9ff;
+	background-color: #d4e9ff;
+	border-radius: 4px 4px 4px 4px;
+}
+.price-search{
+	border-bottom: 1px solid #80ced6;
+}
+.right-banner1 img{
+	margin: 5px 0px 0px 5px;
+	display: block; 
+	margin-left:  auto; 
+	margin-right: auto;
+	margin-top: 20px;
+}
+.right-banner2 img{
+	width: 229px; 
+	display: block;
+	margin-left:  auto; 
+	margin-right: auto;
+	margin-top: 20px;
+}
+.right-banner3{
+	margin-top: 20px;
+	color: #189001;
+	background-color: #ffffff;
+	border: 1px solid #189001;
+	border-radius: 4px 4px 4px 4px;
+	padding: 10px;
+	width: 229px; 
+	display: block;
+	margin-left:  auto; 
+	margin-right: auto;
 }
 /*...........................CSS CHI TIET SAN PHAM........................*/
 .detail .caption{

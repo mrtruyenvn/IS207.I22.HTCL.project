@@ -1,4 +1,5 @@
-<nav class="navbar navbar-default " role="navigation">
+<!-- ........................................menu........................................... -->
+      <nav class="navbar navbar-default " role="navigation">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -19,10 +20,10 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>CHỦ ĐỀ</strong><b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Sinh nhật</a></li>
-                  <li><a href="#">Tình yêu</a></li>
-                  <li><a href="#">Hoa mừng tốt nghiệp</a></li>
-                  <li><a href="#">Ngày Quốc tế Phụ nữ</a></li>
+                  <li><a href="#"><strong>Sinh nhật</strong></a></li>
+                  <li><a href="#"><strong>Tình yêu</strong></a></li>
+                  <li><a href="#"><strong>Hoa mừng tốt nghiệp</strong></a></li>
+                  <li><a href="#"><strong>Ngày Quốc tế Phụ nữ</strong></a></li>
                 </ul>
               </li>
               <li><a href="#"><strong>QUÀ TẶNG KÈM</strong></a></li>

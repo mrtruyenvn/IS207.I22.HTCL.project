@@ -1,8 +1,8 @@
- <header>
+<header>
         <div class="container">
           <div class="row">
             <div class="web-logo col-xs-12 col-sm-8 col-md-8">
-              <a href="#"><img src="<?php echo public_url()?>img/logo-hoa-yeu-thuong.png" alt="" title="Shop hoa yêu thương"></a>
+              <a href="#"><img src="<?php echo public_url()?>img/logoWeb.png" alt="" title="Shop hoa yêu thương"></a>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-4">
               <div id="imaginary_container"> 
@@ -18,4 +18,4 @@
             </div>
           </div> <!-- /.row -->
         </div> <!-- /.container -->
-      </header>
+</header>
