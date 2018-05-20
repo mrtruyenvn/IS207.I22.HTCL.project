@@ -27,6 +27,17 @@ Class MY_Controller extends CI_Controller
 	function Check_Login()
 	{
 		//Kiem tra xem da dang nhap vao admin chua
+		$controller = $this->uri->rsegment('1');
+		$controller= strtolower($controller);
+		$login=$this->session->userdata('login');
+		if(!$login && $controller != 'login')
+		{
+			redirect(admin_url('login'));
+		}
+		if($login && $controller == 'login')
+		{
+			redirect(admin_url('home'));
+		}
 	}
 	
 }

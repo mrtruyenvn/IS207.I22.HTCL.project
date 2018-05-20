@@ -1,69 +1,17 @@
-<div id="left_content">
-	<div id="leftSide" style="padding-top: 30px;">
+<!-- left menu -->
+				<aside class="col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="<?php echo admin_url('')?>"><i class="glyphicon glyphicon-home"></i> Bảng điều khiển </a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-transfer"></i> Giao dịch </a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-shopping-cart"></i> Đơn hàng </a></li>
+						<li><a href="<?php echo admin_url('products')?>"><i class="glyphicon glyphicon-gift"></i> Sản phẩm </a></li>
+						<li><a href="<?php echo admin_url('catalog')?>"><i class="glyphicon glyphicon-th-list"></i> Danh mục </a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-star"></i> Phản hồi </a></li>
+						<li><a href="<?php echo admin_url('admin')?>"><i class="glyphicon glyphicon-user"></i> Quản trị </a></li>
+						<li><a href="<?php echo admin_url('user')?>"><i class="glyphicon glyphicon-user"></i> Thành viên </a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-wrench"></i> Hỗ trợ </a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Liên hệ </a></li>
 
-		<!-- Account panel -->
-
-		<div class="sideProfile">
-			<a href="#" title="" class="profileFace"><img width="40"
-				src="images/user.png"></a> <span>Xin chào: <strong>admin!</strong></span>
-			<span>Nguyễn Xuân Truyền</span>
-			<div class="clear"></div>
-		</div>
-		<div class="sidebarSep"></div>
-		<!-- Left navigation -->
-
-		<ul id="menu" class="nav">
-
-			<li class="home"><a href="admin/home.html" class="active"
-				id="current"> <span>Bảng điều khiển</span> <strong></strong>
-			</a></li>
-			<li class="tran"><a href="admin/tran.html" class=" exp"> <span>Quản
-						lý bán hàng</span> <strong>2</strong>
-			</a>
-
-				<ul class="sub">
-					<li><a href="admin/tran.html"> Giao dịch </a></li>
-					<li><a href="admin/product_order.html"> Đơn hàng sản phẩm </a></li>
-				</ul></li>
-			<li class="product"><a href="admin/product.html" class=" exp"> <span>Sản
-						phẩm</span> <strong>3</strong>
-			</a>
-
-				<ul class="sub">
-					<li><a href="admin/product.html"> Sản phẩm </a></li>
-					<li><a href="admin/cat.html"> Danh mục </a></li>
-					<li><a href="admin/comment.html"> Phản hồi </a></li>
-				</ul></li>
-			<li class="account"><a href="admin/account.html" class=" exp"> <span>Tài
-						khoản</span> <strong>3</strong>
-			</a>
-
-				<ul class="sub">
-					<li><a href="<?php echo admin_url('admin')?>"> Ban quản trị </a></li>
-					<li><a href="admin/admin_group.html"> Nhóm quản trị </a></li>
-					<li><a href="admin/user.html"> Thành viên </a></li>
-				</ul></li>
-			<li class="support"><a href="admin/support.html" class=" exp"> <span>Hỗ
-						trợ và liên hệ</span> <strong>2</strong>
-			</a>
-
-				<ul class="sub">
-					<li><a href="admin/support.html"> Hỗ trợ </a></li>
-					<li><a href="admin/contact.html"> Liên hệ </a></li>
-				</ul></li>
-			<li class="content"><a href="admin/content.html" class=" exp"> <span>Nội
-						dung</span> <strong>4</strong>
-			</a>
-
-				<ul class="sub">
-					<li><a href="admin/slide.html"> Slide </a></li>
-					<li><a href="admin/news.html"> Tin tức </a></li>
-					<li><a href="admin/info.html"> Trang thông tin </a></li>
-					<li><a href="admin/video.html"> Video </a></li>
-				</ul></li>
-
-		</ul>
-
-	</div>
-	<div class="clear"></div>
-</div>
+					</ul>
+				</aside>
+				<!-- end left menu -->

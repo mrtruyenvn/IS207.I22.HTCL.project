@@ -19,7 +19,10 @@ Class Admin extends MY_Controller
 		$message = $this->session->flashdata('message');					//$message = dòng thông báo 
 		$this->data['message'] = $message;
 		
-		$this->data['temp']='admin/admin/index';
+		$fmessage = $this->session->flashdata('fmessage');					//$fmessage = dòng thông báo lỗi
+		$this->data['fmessage'] = $fmessage;
+		
+		$this->data['temp']='admin/admin/index';							
 		$this->load->view('admin/ad_layout',$this->data);
 		
 		
@@ -37,10 +40,7 @@ Class Admin extends MY_Controller
 	}
 	//Thêm mới tài khoản admin
 	function add()
-	{
-		$this->load->library('form_validation');                             // Load thư viện form validation
-		$this->load->helper('form');
-		
+	{	
 		if($this->input->post())
 		{
 			//Tạo các tập luật
@@ -67,7 +67,7 @@ Class Admin extends MY_Controller
 				}
 				else 
 				{
-					$this->session->set_flashdata('message', 'Thêm mới dữ liệu KHÔNG thành công');
+					$this->session->set_flashdata('fmessage', 'Thêm mới dữ liệu KHÔNG thành công');
 				}
 				redirect(admin_url(admin));
 			}
@@ -127,7 +127,7 @@ Class Admin extends MY_Controller
 				}
 				else
 				{
-					$this->session->set_flashdata('message', 'Cập nhật dữ liệu KHÔNG thành công');
+					$this->session->set_flashdata('fmessage', 'Cập nhật dữ liệu KHÔNG thành công');
 				}
 				redirect(admin_url(admin));
 			}
@@ -144,15 +144,32 @@ Class Admin extends MY_Controller
 		$id = $this->uri->rsegment('3');
 		$id = intval($id);
 		$info = $this->admin_model->get_info($id);
-	
+		$permission = $info->permission;
 		if(!$info)
 		{
-			$this->session->set_flashdata('message', 'Quản trị viên không tồn tại.');
+			$this->session->set_flashdata('fmessage', 'Quản trị viên không tồn tại.');
 			redirect(admin_url('admin'));
 		}
-	
-		$this->admin_model->delete($id);
+		if($permission==0)
+		{
+			$this->admin_model->delete($id);
+		}
+		else 
+		{
+			$this->session->set_flashdata('fmessage', 'Đây là boss, bạn không thể xóa được.');
+			redirect(admin_url('admin'));
+		}
 		$this->session->set_flashdata('message', 'Xóa dữ liệu thành công');
 		redirect(admin_url(admin));
+	}
+	
+	// Đăng xuất tài khoản admin
+	function log_out()
+	{
+		if($this->session->userdata('login'))
+		{
+			$this->session->unset_userdata('login');
+		}
+		redirect(admin_url('login'));
 	}
 }

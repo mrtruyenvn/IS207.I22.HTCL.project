@@ -1,86 +1,59 @@
+<!-- start right content -->
+				<section class="col-md-10">
 
-<?php $this->load->view('admin/admin/header',$this->data); ?>
-
-<div class="line"></div>
-
-<div class="wrapper">
-<?php $this->load->view('admin/alert',$this->data);?>
-	<div class="widget">
-		
-		<div class="title">
-
-			<span class="titleIcon">
-				<div class="checker" id="uniform-titleCheck">
-					<span><input type="checkbox" id="titleCheck" name="titleCheck"
-						style="opacity: 0;"></span>
-				</div>
-			</span>
-
-			<h6>Danh sách Quản trị viên</h6>
-
-			<div class="num f12">
-				Tổng số: <b><?php echo $total?></b>
-			</div>
-		</div>
-		<table cellpadding="0" cellspacing="0" width="100%"
-			class="sTable mTable myTable withCheck" id="checkAll">
-			<thead>
-				<tr>
-					<td style="width: 10px;"><img
-						src="<?php echo public_url('admin')?>/images/icons/tableArrows.png" /></td>
-					<td style="width: 80px;">Mã số</td>
-					<td>Tên đăng nhập</td>
-					<td>Họ tên</td>
-					<td>Phân quyền</td>
-					<td style="width: 100px;">Hành động</td>
-				</tr>
-			</thead>
-
-			<tfoot>
-				<tr>
-					<td colspan="7">
-						<div class="list_action itemActions">
-							<a href="#submit" id="submit" class="button blueB"
-								url="user/del_all.html"> <span style='color: white;'>Xóa hết</span>
-							</a>
+					<!-- start box -->
+						<?php $this->load->view('admin/admin/header',$this->data); ?>
+					<!-- end box -->
+					
+					<?php $this->load->view('admin/alert',$this->data);?>
+					
+					<!-- start main-content -->
+					<div class="main-content">
+	
+							
+						<div class="row">
+							<div class="listthanhvien col-md-12">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th colspan="8">DOANH SÁCH QUẢN TRỊ VIÊN</th>
+										</tr>
+									</thead>
+									<tbody class="text-center">
+										<tr style="font-weight: bold;">
+											<td>STT</td>
+											<td>Mã số</td>
+											<td>Tên đăng nhập</td>
+											<td>Họ tên</td>
+											<td>Phân quyền</td>
+											<td>Thao tác</td>
+										</tr>
+										
+										<?php 
+										$i =1;
+										foreach($list as $row):?>
+										<tr>
+											<td><?php echo $i++?></td>
+											<td><?php echo $row->id?></td>
+											<td><?php echo $row->username?></td>
+											<td><?php echo $row->name?></td>
+											<td><?php echo $row->permission?></td>
+											<td><a href="<?php echo admin_url('admin/edit/'.$row->id)?>"  title="Chỉnh sửa"><i class="glyphicon glyphicon-cog" style="color: green;"></i></a>&nbsp;
+											<a href="<?php echo admin_url('admin/delete/'.$row->id)?>" title="Xóa"><i class="glyphicon glyphicon-trash" style="color: red;"></i></a></td>
+										</tr>
+										<?php endforeach; ?>
+										
+									</tbody>
+										
+									<tfoot>
+										<tr>
+											<th colspan="8"><button class="btn btn-success" onclick="location.href='<?php echo admin_url('admin/add')?>'">Thêm mới</button></th>
+										</tr>
+									</tfoot>
+								</table>
+							</div> <!-- /.listgiaodich -->
 						</div>
-
-						<div class='pagination'></div>
-					</td>
-				</tr>
-			</tfoot>
-
-			<tbody>
-				<!-- Filter -->
-				<?php foreach($list as $row):?>
-				<tr>
-					<td><input type="checkbox" name="id[]" value="<?php echo $row->id?>" /></td>
-
-					<td class="textC"><?php echo $row->id?></td>
-
-
-					<td><span title="<?php echo $row->username?>" class="tipS"><?php echo $row->username?> </span></td>
-
-
-					<td><span title="<?php echo $row->name?>" class="tipS">
-							<?php echo $row->name?></span></td>
-
-					<td><?php echo $row->permission?></td>
-
-
-
-					<td class="option"><a href="<?php echo admin_url('admin/edit/'.$row->id)?>" title="Chỉnh sửa"
-						class="tipS "> <img
-							src="<?php echo public_url('admin')?>/images/icons/color/edit.png" />
-					</a> <a href="<?php echo admin_url('admin/delete/'.$row->id)?>" title="Xóa"
-						class="tipS verify_action"> <img
-							src="<?php echo public_url('admin')?>/images/icons/color/delete.png" />
-					</a></td>
-				</tr>
-				<?php endforeach; ?>
-			</tbody>
-		</table>
-	</div>
-</div>
-
-<div class="clear mt30"></div>
+					</div>
+					<!-- end main-content -->
+				</section>
+				<!-- end right content -->

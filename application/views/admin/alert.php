@@ -1,5 +1,14 @@
+
+
 <?php if(isset($message) && $message):?>
-<div class="nNote nInformation hideit">
-	<p><strong>INFORMATION: </strong><?php echo $message?></p>
+<div class="success-alert">
+			<i class="glyphicon glyphicon-ok-sign"></i> <?php echo $message?>
 </div>
+<?php endif;?>
+<?php if(isset($fmessage) && $fmessage):?>
+<!-- start alert -->
+<div class="fail-alert">
+			<i class="glyphicon glyphicon-info-sign"></i> <?php echo $fmessage?>
+</div>
+<!-- end alert -->
 <?php endif;?>

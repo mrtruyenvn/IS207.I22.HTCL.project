@@ -1,24 +1,13 @@
-<div class="titleArea">
-	<div class="wrapper">
-		<div class="pageTitle">
-			<h5>Quản trị viên</h5>
-			<span>Quản lý danh sách ban quản trị</span>
-		</div>
-		
-		<div class="horControlB menu_action">
-			<ul>
-				<li><a href="<?php echo admin_url('admin/add')?>">
-					<img src="<?php echo public_url('admin')?>/images/icons/control/16/add.png">
-					<span>Thêm mới</span>
-				</a></li>
-				
-				<li><a href="<?php echo admin_url('admin')?>">
-					<img src="<?php echo public_url('admin')?>/images/icons/control/16/list.png">
-					<span>Danh sách</span>
-				</a></li>
-			</ul>
-		</div>
-		
-		<div class="clear"></div>
-	</div>
-</div>
+<!-- start box -->
+					<div class="box">
+						<div class="row">
+
+								<div class="col-md-6">
+								<a href="<?php echo admin_url('catalog')?>"><i class="glyphicon glyphicon-th-list"></i> DANH MỤC SẢN PHẨM</a>
+								
+								</div>
+	
+						</div>
+						
+					</div>
+					<!-- end box -->

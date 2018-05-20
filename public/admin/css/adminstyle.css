@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+*{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #838383;
+}
+body{
+	    background: #f2f2f2;
+}
+
+header{
+	background-image: none;
+	background-color: #d1398c;
+}
+
+.navbar-brand, .navbar-nav>li>a{
+	color: #ffffff;
+}
+
+.navbar-toggle{
+	color: #ffffff;
+	background-color: #ffffff;
+}
+.icon-bar{
+	background-color: #d1398c;
+}
+
+/**********************************************************LEFT MENU***************************************************/
+.content{
+	margin-top: -10px;
+	margin-left: 20px;
+	min-height: 600px;
+}
+aside{
+	border: 1px solid #d8d297;
+	border-radius: 4px;
+	background-color: #fffcd9;
+	margin-bottom: 10px;
+}
+.nav-pills>li{
+	border-bottom: 1px solid #b1dab3;
+}
+.nav-stacked>li:hover{
+	background-color: #e6e600;
+}
+
+.nav-pills>li>a{
+	color: #f26922;
+}
+.nav-pills>li>a .glyphicon{
+	padding-right: 10px;
+	color: #f26922;
+}
+
+/**********************************************************CONTENT***************************************************/
+section{
+}
+.box{
+	height: 50px;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: 1px solid #b1dab3;
+	padding: 12px;
+	margin-bottom: 10px;
+	background-color: #e7ffe2;
+}
+
+.alert{
+	border: none;
+	box-shadow: none;
+}
+
+.success-alert{
+	border: 1px solid #33adff;
+	border-radius: 4px;
+	padding: 15px;
+	background-color: #ccebff;
+	color: #33adff;
+	margin-bottom: 10px;
+}
+.success-alert .glyphicon{
+	color: #33adff;
+}
+.fail-alert{
+	border: 1px solid  #ff1a1a;
+	border-radius: 4px;
+	padding: 15px;
+	background-color:  #ffb3b3;
+	color:  #ff1a1a;
+	margin-bottom: 10px;
+}
+.fail-alert .glyphicon{
+	color:  #ff1a1a;
+}
+.table-curved
+{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+table>thead{
+	background-color: #99d6ff;
+
+}
+table>thead>tr>th{
+		color: #ffffff;
+}
+
+.pagination {
+    display: block;
+    padding: 5px 10px;
+    float: right;
+}
+.pagination {
+    margin: auto;
+    width: auto;
+    text-align: center;
+    margin-top: 2px;
+}
+.pagination>a,strong{
+	font-weight: bold;
+    border: 1px solid #737373;
+    padding: 4px 10px 4px 10px;
+    margin: 2px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #666666;
+}
+.pagination>a{
+	color: #838383;
+}
+.pagination>strong{
+	color: #e60000;
+}
+
+.form-group{
+	margin-bottom: 40px;
+}
+.input-error p{
+	color: red;
+}
+/**********************************************************FOOTER***************************************************/
+footer{
+	color: #ffffff;
+	padding: 20px;
+	background-color: #a6a6a6;
+}
+
+/**********************************************************SUB***************************************************/
+.form-login{
+	margin-top: 80px;
+}
