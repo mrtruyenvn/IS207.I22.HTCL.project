@@ -1,26 +1,24 @@
-<div class="col-md-3 right">
+
           <div class="price-search">
            <h4 class="text-center">TÌM THEO GIÁ</h4>
-           <form>
+           <form action="<?php echo site_url('products/price_search')?>" method="get" >
             <div class="form-group">
               <label for="sel1">Từ:</label>
-              <select class="form-control" id="sel1">
-                <option>0 đ</option>
-                <option>100,000 đ</option>
-                <option>500,000 đ</option>
-                <option>1,000,000 đ</option>
+              <select class="form-control" id="" name="price_from">
+				<?php for($i=0;$i<=5000000;$i=$i+500000):?>
+				<option value="<?php echo $i?>"><?php echo number_format($i)?> đ</option>
+				<?php endfor;?>
               </select>
               <br>
               <label for="sel2">Đến:</label>
-              <select class="form-control" id="sel1">
-                <option>100,000 đ</option>
-                <option>500,000 đ</option>
-                <option>1,000,000 đ</option>
-                <option>2,000,000 đ</option>
+              <select class="form-control" id="" name="price_to">
+                <?php for($i=500000;$i<=5000000;$i=$i+500000):?>
+				<option value="<?php echo $i?>"><?php echo number_format($i)?> đ</option>
+				<?php endfor;?>
               </select>
               <br>
               <div class="form-group text-center">        
-                <button type="submit" class="btn btn-success">Tìm kiếm</button>
+                <button type="" class="btn btn-success">Tìm kiếm</button>
               </div>
             </div>
           </form>
@@ -39,5 +37,3 @@
        <div class="right-banner2">
         <img src="<?php echo public_url()?>img/banner-right-03.jpg" alt="banner-right-01.png">
       </div>
-      
-    </div> <!-- /.right -->

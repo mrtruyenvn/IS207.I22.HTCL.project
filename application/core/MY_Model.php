@@ -106,7 +106,7 @@ class MY_Model extends CI_Model {
 	}
 	
 	/**
-	 * Thực hiện câu lệnh query
+	 * Thá»±c hiá»‡n cÃ¢u lá»‡nh query
 	 * $sql : cau lenh sql
 	 */
 	function query($sql){
@@ -134,8 +134,8 @@ class MY_Model extends CI_Model {
 	
 	/**
 	 * Lay thong tin cua row tu dieu kien
-	 * $where: Mảng điều kiện
-	 * $field: Cột muốn lấy dữ liệu
+	 * $where: Máº£ng Ä‘iá»�u kiá»‡n
+	 * $field: Cá»™t muá»‘n láº¥y dá»¯ liá»‡u
 	 */
 	function get_info_rule($where = array(), $field= '')
 	{
@@ -217,7 +217,7 @@ class MY_Model extends CI_Model {
 	protected function get_list_set_input($input = array())
 	{
 		
-		// Thêm điều kiện cho câu truy vấn truyền qua biến $input['where'] 
+		// ThÃªm Ä‘iá»�u kiá»‡n cho cÃ¢u truy váº¥n truyá»�n qua biáº¿n $input['where'] 
 		//(vi du: $input['where'] = array('email' => 'hocphp@gmail.com'))
 		if ((isset($input['where'])) && $input['where'])
 		{
@@ -225,27 +225,27 @@ class MY_Model extends CI_Model {
 		}
 		
 		//tim kiem like
-		// $input['like'] = array('name' => 'abc');
+		// $input['like'] = array('name','abc');
 	    if ((isset($input['like'])) && $input['like'])
 		{
 			$this->db->like($input['like'][0], $input['like'][1]); 
 		}
 		
-		// Thêm sắp xếp dữ liệu thông qua biến $input['order'] 
-		//(ví dụ $input['order'] = array('id','DESC'))
+		// ThÃªm sáº¯p xáº¿p dá»¯ liá»‡u thÃ´ng qua biáº¿n $input['order'] 
+		//(vÃ­ dá»¥ $input['order'] = array('id','DESC'))
 		if (isset($input['order'][0]) && isset($input['order'][1]))
 		{
 			$this->db->order_by($input['order'][0], $input['order'][1]);
 		}
 		else
 		{
-			//mặc định sẽ sắp xếp theo id giảm dần 
+			//máº·c Ä‘á»‹nh sáº½ sáº¯p xáº¿p theo id giáº£m dáº§n 
 			$order = ($this->order == '') ? array($this->table.'.'.$this->key, 'desc') : $this->order;
 			$this->db->order_by($order[0], $order[1]);
 		}
 		
-		// Thêm điều kiện limit cho câu truy vấn thông qua biến $input['limit'] 
-		//(ví dụ $input['limit'] = array('10' ,'0')) 
+		// ThÃªm Ä‘iá»�u kiá»‡n limit cho cÃ¢u truy váº¥n thÃ´ng qua biáº¿n $input['limit'] 
+		//(vÃ­ dá»¥ $input['limit'] = array('10' ,'0')) 
 		if (isset($input['limit'][0]) && isset($input['limit'][1]))
 		{
 			$this->db->limit($input['limit'][0], $input['limit'][1]);
@@ -254,7 +254,7 @@ class MY_Model extends CI_Model {
 	}
 	
 	/**
-	 * kiểm tra sự tồn tại của dữ liệu theo 1 điều kiện nào đó
+	 * kiá»ƒm tra sá»± tá»“n táº¡i cá»§a dá»¯ liá»‡u theo 1 Ä‘iá»�u kiá»‡n nÃ o Ä‘Ã³
 	 * $where : mang du lieu dieu kien
 	 */
     function check_exists($where = array())

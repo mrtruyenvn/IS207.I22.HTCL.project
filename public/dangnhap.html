@@ -84,39 +84,91 @@
         </div>
       </nav>
 
-      <section class="account container">
+      <div class="content container" >
         <div class="row">
-          <div class="signup col-md-5">
-          <div class="panel">
-            <div class="panel-heading"><h4>ĐĂNG KÝ TÀI KHOẢN</h4></div>
-            <div class="panel-body">
-              <form action="">
-                <div class="col-md-6">
-                  <input class="form-control" placeholder="Họ" type="text" title="Họ">
-                </div>
-                <div class="col-md-6">
-                   <input class="form-control" placeholder="Tên" type="text" title="Tên">
-                </div>
+
+          <div class="register col-sm-9">
+
+            <div class="panel panel-default">
+              <div class="panel-heading"><strong><a href="" title="Sản phẩm nổi bật"><h4>BẠN ĐÃ CÓ TÀI KHOẢN?</h4></a></strong></div>
+              <div class="panel-body">
                 <div class="row">
-                  <div class="col-md-6">
-                    <input class="form-control" type="text" placeholder="Email" title="Email">
-                  </div>
+                  <form class="form-horizontal" action="/action_page.php">
+                    <div class="form-group">
+                      <label class="control-label col-sm-4" for="email">Tài khoản đăng nhập:*</label>
+                      <div class="col-sm-6">
+                        <input type="name" class="form-control" name="email" placeholder="Nhập email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-4" for="pwd">Mật khẩu:*</label>
+                      <div class="col-sm-6"> 
+                        <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu">
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label col-sm-4" for="pwd">Xác nhận mật khẩu:*</label>
+                      <div class="col-sm-6"> 
+                        <input type="password" class="form-control" name="repassword" placeholder="Xác nhận mật khẩu">
+                      </div>
+                    </div>
+                    <div class="form-group"> 
+                      <div class="col-sm-offset-4 col-sm-6">
+                        <button type="submit" class="btn btn-success">Đăng nhập</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-              </form>
+              </div>
+              
             </div>
+</div>
+          
+          <aside class="col-sm-3 right">
+            <div class="price-search">
+             <h4 class="text-center">TÌM THEO GIÁ</h4>
+             <form>
+              <div class="form-group">
+                <label for="sel1">Từ:</label>
+                <select class="form-control" id="sel1">
+                  <option>0 đ</option>
+                  <option>100,000 đ</option>
+                  <option>500,000 đ</option>
+                  <option>1,000,000 đ</option>
+                </select>
+                <br>
+                <label for="sel2">Đến:</label>
+                <select class="form-control" id="sel1">
+                  <option>100,000 đ</option>
+                  <option>500,000 đ</option>
+                  <option>1,000,000 đ</option>
+                  <option>2,000,000 đ</option>
+                </select>
+                <br>
+                <div class="form-group text-center">        
+                  <button type="submit" class="btn btn-success">Tìm kiếm</button>
+                </div>
+              </div>
+            </form>
           </div>
-          </div> <!-- /.signup -->
-          <div class="signin col-md-5">
-              <div class="signup col-md-5">
-          <div class="panel">
-            <div class="panel-heading"><h4>ĐĂNG NHẬP</h4></div>
-            <div class="panel-body">
-              <!-- form -->
-            </div>
+          <div class="right-banner1">
+            <img src="img/banner-right-01.png" alt="banner-right-01.png">
           </div>
-          </div> <!-- /.signin -->
-        </div> <!-- /.row -->
-      </section>
+          <div class="right-banner3">
+           Website bán hoa là đồ án môn học "Phát triển ứng dụng web" được thực hiện bởi sinh viên: 
+           Nguyễn Xuân Truyền Mssv: 14521031 
+           dưới sự hướng dẫn của giảng viên môn học 
+           Mai Xuân Hùng 
+
+           Đây là một trang web thương mại điện tử, cho phép khách hàng tìm kiếm và đặt mua hoa theo nhu cầu, sở thích. Trang web cũng cho phép thanh toán online qua cổng thanh toán trực tuyến.
+         </div>
+         <div class="right-banner2">
+          <img src="img/banner-right-03.jpg" alt="banner-right-01.png">
+        </div>            
+      </aside>  
+
+    </div> <!-- /.row -->
+  </div> <!-- /.content -->
 
   <footer>
     <div class="container">

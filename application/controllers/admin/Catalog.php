@@ -9,7 +9,9 @@ Class Catalog extends MY_Controller
 	
 	function index()
 	{
-		$list = $this->catalog_model->get_list();
+		$list = array();
+		$list['order'] = array('parent_id','DESC');
+		$list = $this->catalog_model->get_list($list);
 		$this->data['list'] = $list;
 		
 		$message = $this->session->flashdata('message');					//$message = dòng thông báo

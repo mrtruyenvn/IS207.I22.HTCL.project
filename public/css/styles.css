@@ -35,9 +35,7 @@ a:link, a:focus, a:visited{
 	border-image-outset: initial;
 	border-image-repeat: initial;
 }
-a:hover{
-	color: #bd2026;
-}
+
 header{
 	background-image: url(../img/transp_bg.png);
 	background-repeat: -1;
@@ -66,86 +64,64 @@ header img{
 	border:0;
 	background:transparent;
 }
+/***********************************NAVBAR******************************************************/
 .navbar{
-	background-image: url(../img/line.png);
-	background-position-x: left;
-	background-position-y: 1px;
-	background-size: initial;
-	background-repeat-x: repeat;
-	background-repeat-y: no-repeat;
-	background-attachment: initial;
-	background-origin: initial;
-	background-clip: initial;
-	background-color: transparent;
-	background-color: #d1398c;
-	border-bottom:  1px ridge #cdcdcd;
+	background-image: url("../img/bg-special.png");
+	background-repeat: repeat;
+	border-bottom:  1px solid #d9d9d9;
+	border-top:  1px solid #d9d9d9;
+}
+.navbar-collapse{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+ul.nav li{
+
+}
+ul.nav li:hover{
+	border-radius: 4px;
+	background-color: #e7ffe2 !important;
+	border: 1px solid #b1dab3;
 }
 
-span.icon-bar{
-	color: #ffffff;
-}
-
-#home{
-	font-size: 25px;
-	margin-top: -5px;
-	color: #ffffff;
-}
-
-.dropdown .caret{
-	color: #ffffff;
-}
-ul.nav>li{
-	border: 1px solid transparent;
-}
-/*ul.nav>li.dropdown:hover{
-	background-color: #dbffdb;
-	border-top: 1px solid;
-}*/
-ul.nav>li.dropdown strong{
+ul.nav li a{
 	text-transform: uppercase;
-	color: #ffffff;
-}
-ul.nav>li.dropdown strong:hover{
-	color: #bd2026;
-}
+	font-weight: bold;
 
-ul.nav>li.dropdown:hover>.dropdown-menu{
-	display: block;
-	z-index: 1;
-	background-color: #d1398c;
-	opacity: 0.8;
 }
-.dropdown-menu>li>a{
-	border-bottom: 1px solid #ffffff;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.dropdown-menu>li:hover{
-	color: #bd2026;
-	background-color: #CC66FF;
-}
-/*.dropdown-menu>li>strong:hover{
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
 		color: #bd2026;
-}*/
-.nav>li>a>strong{
-	color: #ffffff;
-	font-weight: 600;
-	line-height: 10px;
 }
-.navbar-default .navbar-brand{
-	color: #ffffff;
-	font-family: time news roman;
+.dropdown-toggle{
+	position: relative;
+	z-index: 2;
+}
+ul.nav>li.dropdown:hover>.dropdown-menu{
+	background-color: #e7ffe2;
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #838383;
+	margin: 0px -1px 0px;
+
+}
+a.drpopdown-toggle{
+	color: #838383;
 }
 
-#header form{
-	width: 250px;
+.dropdown-menu{
+	box-shadow: none;
+	border: 1px solid #b1dab3;
 }
-.navbar-default .navbar-nav>li>a{
-	color: #ffffff;
+.dropdown-menu li{
+	padding: 10px;
 }
-
-.navbar{
-	margin-bottom: 10px;
+.dropdown-menu li a{
+	color: #838383;
+}
+.dropdown-menu li a:hover{
+	background: none !important;
+	color: #bd2026;
 }
 /*............SLIDESHOW...................................*/
 
@@ -257,7 +233,7 @@ ol.carousel-indicators{
 	background-position: left center;
 	background-repeat: no-repeat;
 	font-size: 18px;
-	padding: 0px 35px 0px 30px;
+	padding: 0px 0px 0px 30px;
     width: 350px;
     font-weight: 600;
     margin-top: 20px;
@@ -284,6 +260,7 @@ ol.carousel-indicators{
 
 .content .caption{
 	background-color: #F7F7F7;
+	padding-top: 2px;
 }
 .panel-heading a{
 	color: #bd2026;
@@ -386,10 +363,14 @@ ol.carousel-indicators{
 	margin-right: auto;
 }
 /*...........................CSS CHI TIET SAN PHAM........................*/
+
+.product_detail{
+	margin-top: 10px;
+}
 .detail .caption{
 	background-color: #F7F7F7;
-	border-top: 1px solid #838383;
-	color: #bd2026;
+	border-top: 1px solid #cccccc;
+
 }
 .detail .caption a{
 	width: 100%;
@@ -401,22 +382,69 @@ ol.carousel-indicators{
 	cursor: pointer;
 	background: -webkit-linear-gradient(top,#ef8d02,#f05e0b);
 }
+
+.detail .glyphicon{
+	color: #ffffff;
+}
 .describe .panel{
 	box-shadow: none;
-	background-color: #ffffff;
+	background-color: #e7ffe2;
+	border: 1px solid #b1dab3;
 }
 .describe .panel-heading{
+	background-color: #e7ffe2;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 .describe .panel-heading h4{
-	margin-bottom: -15px;
+	text-transform: uppercase;
+	color: #189001;
 }
 .describe .panel-body{
-	padding-top: 0px;
+	padding-bottom: 25px;
+	line-height: 1.6;
+	color: #189001;
+}
+
+.more{
+
+	border:  1px solid #d8d297;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 4px;
+	background-color: #fffcd9;
+}
+.more>ul>li{
+		color: #f26922;
+		margin-top: 5px;
+}
+.more>ul>li>span{
+		background-color: #f26922;
+}
+.more>ul{
+		list-style-type: none;
+		color: #f26922;
+		margin-top: 5px;
+
+}
+.cungloai{
+	margin-top: 40px;
+}
+.cungloai .panel-heading{
+	    background-image: linear-gradient(to bottom,#ffffff 0,#ffffff 100%);
+	    border-bottom: 1px solid #cccccc;
+}
+.cungloai .panel-body{
+	    margin-top: 20px;
+}
+
+.cungloai .thumbnail h5 b{
+	color: #bd2026;
 }
 footer{
-	background-color: #b2b2a6;
+	background-image: url("../img/bg-special.png");
+	background-repeat: repeat;
 	width: 100%;
 	height: auto;
 	margin-top: 5px;
@@ -425,4 +453,161 @@ footer{
 
 footer .footer{
 
+}
+/*...........................CSS DANH SÁCH SẢN PHẨM........................*/
+.product_list{
+	margin-top: 10px;
+}
+.product_list .panel-heading{
+	 background-image: linear-gradient(to bottom,#ffffff 0,#ffffff 100%);
+	background-color: #ffffff;
+	border-bottom: 1px solid #cccccc;
+}
+.product_list .panel-body{
+	margin-top: 20px;
+}
+
+.pagination {
+    display: block;
+    padding: 5px 10px;
+    float: right;
+}
+.pagination{
+    margin: auto;
+    width: auto;
+    text-align: center;
+    margin-top: 2px;
+}
+.pagination a{
+	font-weight: bold;
+    border: 1px solid #737373;
+    padding: 4px 10px 4px 10px;
+    margin: 2px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #666666;
+    color: #838383;
+}
+.pagination strong{
+	font-weight: bold;
+    border: 1px solid #737373;
+    padding: 4px 10px 4px 10px;
+    margin: 2px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #666666;
+    	color: #e60000;
+	background-color: #ffffff;
+}
+
+/********************BACK TO TOP BUTTON********************/
+a.cd-top {
+display: inline-block;
+height: 60px;
+width: 60px;
+position: fixed;
+bottom: 20px;
+right: 15px;
+/* image replacement properties */
+overflow: hidden;
+text-indent: 100%;
+white-space: nowrap;
+background-image: url(../img/back-to-top-button.png);
+background-size: 60px 60px;
+visibility: hidden;
+opacity: 0;
+-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+-moz-transition: opacity .3s 0s, visibility 0s .3s;
+transition: opacity .3s 0s, visibility 0s .3s;
+}
+a.cd-top.cd-is-visible, a.cd-top.cd-fade-out, .no-touch a.cd-top:hover {
+-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+-moz-transition: opacity .3s 0s, visibility 0s 0s;
+transition: opacity .3s 0s, visibility 0s 0s;
+}
+ 
+a.cd-top, a.cd-top:visited, a.cd-top:hover {
+color: #CCCCCC;
+text-decoration: none;
+}
+ 
+a.cd-top.cd-is-visible {
+/* the button becomes visible */
+visibility: visible;
+opacity: 1;
+}
+a.cd-top.cd-fade-out {
+/* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+opacity: 1;
+}
+
+/**************************GIO HANG***************************************************/
+
+.cart{
+	margin-top: 10px;
+}
+.cart .panel{
+	box-shadow: none;
+	background-color: #F7F7F7;
+	border: 1px solid #cdcdcd;
+}
+.cart .panel-heading{
+	 background-image: linear-gradient(to bottom,#F7F7F7 0,#F7F7F7 100%);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.cart .panel-heading h4{
+	text-transform: uppercase;
+	color: #333;
+}
+.cart .panel-body{
+	border-top: 1px solid #cdcdcd;
+	padding-bottom: 25px;
+	line-height: 1.6;
+	padding-top: 10px;
+}
+.cart .panel-body h4{
+	color: #bd2026;
+}
+
+.cart .panel-body h5:{
+	color: #bd2026;
+}
+.cart .panel-body h3:{
+	color: #0000b3;
+}
+
+.cart img{
+		border: 1px solid #cdcdcd;
+}
+.cart img:hover{
+	transform: scale(1.1);
+}
+
+/************************************DANG KY DANG NHAP*************************************/
+.register{
+	margin-top: 10px;
+}
+.register .panel{
+	box-shadow: none;
+	border: 1px solid #cdcdcd;
+}
+.register{
+	margin-top: 10px;
+}
+.register .panel-heading{
+	 background-image: linear-gradient(to bottom,#ffffff 0,#ffffff 100%);
+	background-color: #ffffff;
+	border-bottom: 1px solid #cccccc;
+}
+.register .panel-heading h4{
+	color: #189001;
+}
+.register .panel-body{
+	margin-top: 20px;
+}
+.register .form-group{
+	margin-bottom: 40px;
+}
+.error p{
+	margin-top: 2px;
+	color: red;
 }

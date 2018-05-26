@@ -101,7 +101,7 @@ section{
     border-radius: 4px;
 }
 table>thead{
-	background-color: #99d6ff;
+	background-color: #6f94dc;
 
 }
 table>thead>tr>th{
@@ -132,6 +132,7 @@ table>thead>tr>th{
 }
 .pagination>strong{
 	color: #e60000;
+	background-color: #ffffff;
 }
 
 .form-group{
@@ -139,6 +140,10 @@ table>thead>tr>th{
 }
 .input-error p{
 	color: red;
+}
+
+.listsanpham i:hover{
+	transform: scale(1.4);
 }
 /**********************************************************FOOTER***************************************************/
 footer{

@@ -25,15 +25,11 @@
                 <li data-target="#carousel-id" data-slide-to="2" class=""></li>
               </ol> -->
               <div class="carousel-inner">
-                <div class="item">
-                 <a href="#"><img src="<?php echo public_url()?>img/banner1.jpg" alt=""></a>
+                 <?php foreach ($slide_list as $row):?>
+                <div class="item <?php if ($row->sort ==1) echo 'active'?>">
+                 <a href=""><img src="<?php echo base_url('upload/slide/').$row->image?>" alt="<?php echo $row->image?>"></a>
                </div>
-               <div class="item">
-                <a href="#"><img src="<?php echo public_url()?>img/banner2.jpg" alt=""></a>
-              </div>
-              <div class="item active">
-                <a href="#"><img src="<?php echo public_url()?>img/banner3.jpg" alt=""></a>
-              </div>
+               <?php endforeach;?>
             </div>
           </div> <!-- /.carousel -->
         </div> <!-- /.col-md-8 -->     

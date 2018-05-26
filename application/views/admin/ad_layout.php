@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<?php $this->load->view('admin/header')?>
+		<?php $this->load->view('admin/header', $this->data)?>
 		
 		<div class="content container-fluid-full">
 			<div class="row">

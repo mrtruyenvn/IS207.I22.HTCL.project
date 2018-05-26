@@ -37,9 +37,14 @@
 											<td><?php echo $row->id?></td>
 											<td><?php echo $row->username?></td>
 											<td><?php echo $row->name?></td>
-											<td><?php echo $row->permission?></td>
+											<?php $per = $row->permission?>
+											<?php if($per==1):?>
+											<td>Sếp</td>
+											<?php elseif($per==0):?>
+											<td>Nhân viên quèn</td>
+											<?php endif;?>
 											<td><a href="<?php echo admin_url('admin/edit/'.$row->id)?>"  title="Chỉnh sửa"><i class="glyphicon glyphicon-cog" style="color: green;"></i></a>&nbsp;
-											<a href="<?php echo admin_url('admin/delete/'.$row->id)?>" title="Xóa"><i class="glyphicon glyphicon-trash" style="color: red;"></i></a></td>
+											<a href="<?php echo admin_url('admin/delete/'.$row->id)?>" onclick="return confirmDelete()" title="Xóa"><i class="glyphicon glyphicon-trash" style="color: red;"></i></a></td>
 										</tr>
 										<?php endforeach; ?>
 										

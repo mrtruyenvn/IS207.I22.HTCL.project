@@ -1,4 +1,4 @@
-<!-- ........................................menu........................................... -->
+
       <nav class="navbar navbar-default " role="navigation">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -9,31 +9,52 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" title="Trang chủ"><span id="home" class="glyphicon glyphicon-home"></span></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#"><strong>HOA TƯƠI</strong></a></li>
-              <li><a href="#"><strong>HOA GIẤY</strong></a></li>
+            <li><a href="<?php echo base_url()?>">TRANG CHỦ</a></li>
+            <?php foreach ($catalog_list as $row):?>
+            	<?php if(!empty($row->sub)):?>
+
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>CHỦ ĐỀ</strong><b class="caret"></b></a>
+                <a href="<?php echo base_url('products/catalog/'.$row->id)?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $row->name?><b class="caret"></b></a>
+                
                 <ul class="dropdown-menu">
-                  <li><a href="#"><strong>Sinh nhật</strong></a></li>
-                  <li><a href="#"><strong>Tình yêu</strong></a></li>
-                  <li><a href="#"><strong>Hoa mừng tốt nghiệp</strong></a></li>
-                  <li><a href="#"><strong>Ngày Quốc tế Phụ nữ</strong></a></li>
+                <?php foreach ($row->sub as $sub):?>
+                  <li><a href="<?php echo base_url('products/catalog/'.$sub->id)?>"><?php echo $sub->name?></a></li>
+        		<?php endforeach;?>
                 </ul>
-              </li>
-              <li><a href="#"><strong>QUÀ TẶNG KÈM</strong></a></li>
-              <li><a href="#"><strong>HOA CƯỚI</strong></a></li>
+                </li>
+                <?php else:?>
+                              <li><a href="<?php echo base_url('products/catalog/'.$row->id)?>"><?php echo $row->name?></a></li>
+                              <?php endif;?>
+              
+         
+              <?php endforeach;?>
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><strong>LIÊN HỆ</strong></a></li>
-              <li><a href="#"><strong>ĐĂNG NHẬP</strong></a></li>
-              <li><a href="#"><strong>ĐĂNG KÝ</strong></a></li>
+            <li><a href="">LIÊN HỆ</a></li>
+            <li><a href="<?php echo base_url('cart')?>">GIỎ HÀNG (<?php echo $total_items?>)</a></li>
+            <li class="dropdown">
+            <?php if(isset($user_info)):?>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo 'Hi, '. $user_info->last_name?><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li><a href="<?php echo base_url('user/info')?>">THÔNG TIN TÀI KHOẢN</a></li>
+                  <li><a href="<?php echo base_url('user/log_out')?>">ĐĂNG XUẤT</a></li>
+                </ul>
+                <?php else:?>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">TÀI KHOẢN<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?php echo base_url('user/login')?>">ĐĂNG NHẬP</a></li>
+                  <li><a href="<?php echo base_url('user/register')?>">ĐĂNG KÝ</a></li>
+                </ul>
+              </li>
+              <?php endif;?>
+
+              
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>

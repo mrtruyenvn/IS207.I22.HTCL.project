@@ -32,6 +32,16 @@
 												<div name="name_error" class="input-error"><?php echo form_error('username')?></div>
 											</div>
 										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-sm-4">Phân quyền:*</label>
+											<div class="col-sm-6"> 
+												<select name="permission" class="form-control">
+													<option value="0">Nhân viên quèn</option>
+													<option value="1">Sếp </option>
+												</select>
+											</div>
+										</div>
 
 										<div class="form-group">
 											<label class="control-label col-sm-4">Mật khẩu:*</label>
@@ -42,7 +52,7 @@
 										</div>
 
 										<div class="form-group">
-											<label class="control-label col-sm-4">Nhập lại mật khẩu:*</label>
+											<label class="control-label col-sm-4">Xác nhận mật khẩu:*</label>
 											<div class="col-sm-6"> 
 												<input type="password" class="form-control" name="repassword" value="<?php echo set_value('repassword')?>">
 												<div name="name_error" class="input-error"><?php echo form_error('repassword')?></div>

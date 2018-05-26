@@ -19,7 +19,35 @@ Class MY_Controller extends CI_Controller
 				}
 			default:
 				{
-					//xu li du lieu o trang ngoai
+					//xu li du lieu o trang nguoi dung
+					//Lấy danh mục sản phẩm trên thanh menu
+					$this->load->model('catalog_model');
+					$input = array();
+					$input['where'] = array('parent_id' => 0);
+					$input['order'] = array('sort','ASC');
+					$catalog_list = $this->catalog_model->get_list($input);
+					foreach($catalog_list as $row)
+					{
+						$input['where'] = array('parent_id' => $row->id);
+						$sub = $this->catalog_model->get_list($input);
+						$row->sub = $sub;
+					}
+					$this->data['catalog_list'] = $catalog_list;
+					
+					
+					// Lấy số lượng giỏ hàng trên thanh menu
+					$this->load->library('cart');
+					$this->data['total_items'] = $this->cart->total_items();
+					
+					//Kiểm tra thành viên đăng nhập
+					$user_log = $this->session->userdata('user_id_login');
+					$this->data['user_log'] = $user_log;
+					if($user_log)
+					{
+						$this->load->model('user_model');
+						$user_info = $this->user_model->get_info($user_log);
+						$this->data['user_info'] = $user_info;
+					}
 				}
 		}
 	}

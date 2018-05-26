@@ -8,7 +8,7 @@
 
 
 		<div class="row">
-			<div class="listthanhvien col-md-12">
+			<div class="listsanpham col-md-12">
 				<table class="table table-striped ">
 					<thead>
 						<tr>
@@ -27,7 +27,7 @@
 									</div>
 									<div class="form-group">
 										<label>Loại:</label> 
-										<select name="catalog" id="">
+										<select class="form-control" name="catalog" id="">
 											<option value="">Loại sản phẩm</option>
 											<?php foreach($catalog as $row):?>
 											<?php if (count($row->sub) >=1):?>
@@ -38,7 +38,7 @@
 												<?php endforeach;?>
 											</optgroup>
 											<?php else:?>
-											<option value="<?php echo $row->id?>" <?php echo ($this->input->get('catalog')==$row->id)? 'selected' :'';?>><?php echo $row->name?></option>
+											<option style="font-weight:bold" value="<?php echo $row->id?>" <?php echo ($this->input->get('catalog')==$row->id)? 'selected' :'';?>><?php echo $row->name?></option>
 											<?php endif;?>
 											<?php endforeach;?>
 										</select>
@@ -63,9 +63,9 @@
 							<td><?php echo $stt++?></td>
 							<td><?php echo $row->id?></td>
 							<td><?php echo $row->name?></td>
-							<td><img alt="<?php echo $row->image_id?>" src="<?php echo base_url('upload/products/'.$row->image_id)?>"></td>
-							<td style="font-weight: bold"><?php if($row->new_price != $row->price):?> 
-								<p style="color: #e62e00"><?php echo number_format($row->new_price)?> đ<br />
+							<td><img style="width:75px; height:90px;" alt="<?php echo $row->image_id?>" src="<?php echo base_url('upload/products/'.$row->image_id)?>" title="<?php $row->image_id?>"></td>
+							<td style="font-weight: bold"><?php if($row->discount > 0):?> 
+								<p style="color: #e62e00"><?php echo number_format($row->price - $row->discount)?> đ<br />
 								</p>
 								<p style="color: #4040bf">
 									<strike style="color: #4040bf"><?php echo number_format($row->price)?></strike>
@@ -79,9 +79,9 @@
 							<td><?php echo $row->buy_counter?></td>
 							<td><a href="" title="Chi tiết"><i
 									class="glyphicon glyphicon-list-alt" style="color: grey;"></i></a>&nbsp;
-								<a href="" title="Chỉnh sửa"><i class="glyphicon glyphicon-ok"
-									style="color: green;"></i></a>&nbsp; <a href="" title="Xóa"><i
-									class="glyphicon glyphicon-remove" style="color: red;"></i></a>
+								<a href="<?php echo admin_url('products/edit/'.$row->id)?>" title="Chỉnh sửa"><i class="glyphicon glyphicon-cog"
+									style="color: green;"></i></a>&nbsp; 
+								<a href="<?php echo admin_url('products/delete/'.$row->id)?>" title="Xóa" onclick="return confirmDelete()"><i class="glyphicon glyphicon-trash" style="color: red;"></i></a>
 							</td>
 						</tr>
 										<?php endforeach;?>
