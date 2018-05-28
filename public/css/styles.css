@@ -611,3 +611,15 @@ opacity: 1;
 	margin-top: 2px;
 	color: red;
 }
+
+.success-alert{
+	border: 1px solid #33adff;
+	background: #ccebff;
+	margin: 0px 15px 15px 15px;
+	border-radius: 4px;
+	padding: 20px;
+	color: #33adff;
+}
+.success-alert .glyphicon{
+	color: #33adff;
+}

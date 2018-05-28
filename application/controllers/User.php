@@ -55,12 +55,13 @@ Class User extends MY_Controller
 				);
 				if($this->user_model->create($data))
 				{
-					echo "<script>alert('Đăng ký tài khoản thành công. Có thể đăng nhập ngay bây giờ!');</script>";
+					$this->session->set_flashdata('message', 'Bạn đã đặt hàng thành công, chúng tôi sẽ kiểm tra và gửi hàng cho bạn');
 				}
 				else
 				{
 					echo "<script>alert('Đăng ký tài khoản thất bại!');</script>";
 				}
+				redirect(site_url());
 			}
 		}
 		
@@ -117,6 +118,7 @@ Class User extends MY_Controller
 		{
 			$this->session->unset_userdata('user_id_login');
 		}
+		$this->session->set_flashdata('message', 'Đăng xuất thành công');
 		redirect();
 	}
 	

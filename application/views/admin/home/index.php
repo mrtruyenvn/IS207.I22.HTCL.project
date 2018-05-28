@@ -6,11 +6,7 @@
 						<div class="row">
 
 								<div class="col-md-6">
-								<i class="glyphicon glyphicon-home"></i> BẢNG ĐIỀU KHIỂN	
-								</div>
-
-								<div class="col-md-6">
-								<button>Danh sách</button>	
+								<a href="<?php echo admin_url()?>"><i class="glyphicon glyphicon-home"></i> BẢNG ĐIỀU KHIỂN	</a>
 								</div>		
 						</div>
 						
@@ -31,15 +27,19 @@
 									<tbody>
 										<tr>
 											<td>Tổng số giao dịch</td>
-											<td>15</td>
+											<td><?php echo $trans_total?></td>
 										</tr>
 										<tr>
 											<td>Tổng số sản phẩm</td>
-											<td>50</td>
+											<td><?php echo $product_total?></td>
 										</tr>
 										<tr>
 											<td>Tổng số thành viên</td>
-											<td>120</td>
+											<td><?php echo $user_total?></td>
+										</tr>
+										<tr>
+											<td>Tổng số quản trị viên</td>
+											<td><?php echo $admin_total?></td>
 										</tr>
 										<tr>
 											<td>Tổng số liên hệ</td>

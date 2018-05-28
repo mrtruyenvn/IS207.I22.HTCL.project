@@ -8,6 +8,8 @@ Class Order extends MY_Controller
 	
 	function checkout()
 	{
+
+		
 		$carts = $this->cart->contents();
 		// Tính số tiền thanh toán
 		$total_items = $this->cart->total_items();
@@ -87,9 +89,13 @@ Class Order extends MY_Controller
 				}
 				//Xóa toàn bộ giỏ hàng
 				$this->cart->destroy();
+				$this->session->set_flashdata('message', 'Bạn đã đặt hàng thành công, chúng tôi sẽ kiểm tra và gửi hàng cho bạn');
+				//print_data($message);
 				redirect();
 			}
 		}
+
+		
 		$this->data['temp'] = 'site/order/checkout';
 		$this->load->view('site/layout',$this->data);
 	}

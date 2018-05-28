@@ -7,19 +7,19 @@ Class Transaction extends MY_Controller
 		$this->load->model('transaction_model');
 	}
 	
-	// Hiển thị danh sách sản phẩm
+	// Hiển thị danh sách giao dịch
 	function index()
 	{
-		// Phân trang sp
+		// Phân trang
 		$total_rows = $this->transaction_model->get_total();
 		$this->data['total_rows'] = $total_rows;
 		
 		// Cấu hình thư viện phân trang pagination
 		$config =array();
 // 		$config['use_page_numbers'] = TRUE;
-		$config['total_rows']=$total_rows; //Tổng tất cả sản phẩm
+		$config['total_rows']=$total_rows; //Tổng tất cả giao dịch
 		$config['base_url'] = admin_url('transaction/index');
-		$config['per_page'] = 10;
+		$config['per_page'] = 20;
 		$config['uri_segment'] = 4;
 		$config['next_link']='>>'; 
 		$config['prev_link']='<<';
@@ -39,25 +39,14 @@ Class Transaction extends MY_Controller
         {
         	$input['where']['id'] = $id;
         }
-		//Lấy danh sách sản phẩm & truyền biến sang view
+        $mail = $this->input->get('mail');
+        if($mail)
+        {
+        	$input['like'] = array('user_email',$mail);
+        }
+		//Lấy danh sách giao dịch & truyền biến sang view
 		$list = $this->transaction_model->get_list($input);
 		$this->data['list'] = $list;
-		
-		//Lấy danh sách danh mục sản phẩm
-		$this->load->model('catalog_model');
-		$input = array();
-		$input['where'] = array('parent_id' => 0);
-		$catalog = $this->catalog_model->get_list($input);
-		foreach ($catalog as $row)
-		{
-			$input['where'] = array('parent_id' =>$row->id);
-			$sub = $this->catalog_model->get_list($input);
-			$row->sub = $sub;
-		}
-//		print_data($catalog);
-		$this->data['catalog'] = $catalog;
-
-		
 		// Lấy nội dung biến message
 		$message = $this->session->flashdata('message');					//$message = dòng thông báo
 		$this->data['message'] = $message;
@@ -67,5 +56,27 @@ Class Transaction extends MY_Controller
 		
 		$this->data['temp'] = 'admin/transaction/index';
 		$this->load->view('admin/ad_layout',$this->data);
+	}
+	
+	//Xóa một giao dịch
+	function delete()
+	{
+		$id = $this->uri->rsegment('3');
+		$id = intval($id);
+		$info = $this->transaction_model->get_info($id);
+	
+	
+		if(!$info)
+		{
+			$this->session->set_flashdata('fmessage', 'Giao dịch này không tồn tại.');
+			redirect(admin_url('transaction'));
+		}
+		else
+		{
+			$this->transaction_model->delete($id);
+				
+		}
+		$this->session->set_flashdata('message', 'Xóa dữ liệu thành công');
+		redirect(admin_url('transaction'));
 	}
 }

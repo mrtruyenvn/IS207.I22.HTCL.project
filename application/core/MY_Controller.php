@@ -39,6 +39,12 @@ Class MY_Controller extends CI_Controller
 					$this->load->library('cart');
 					$this->data['total_items'] = $this->cart->total_items();
 					
+					
+					//Hiển thị footer
+					$this->load->model('address_model');
+					$address = $this->address_model->get_list();
+					$this->data['address'] = $address;
+					
 					//Kiểm tra thành viên đăng nhập
 					$user_log = $this->session->userdata('user_id_login');
 					$this->data['user_log'] = $user_log;

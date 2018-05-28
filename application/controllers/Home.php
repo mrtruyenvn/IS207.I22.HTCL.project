@@ -44,11 +44,16 @@ class Home extends MY_Controller {
 		$input = array();
  		$input['limit'] = array('4','0');
 		$input['where'] = array('discount >' => 0);
+		$input['order'] = array('id','RANDOM');
 		$sale = $this->products_model->get_list($input);
 		$this->data['sale'] = $sale;
 		
+		// Lấy nội dung biến message
+		$message = $this->session->flashdata('message');					//$message = dòng thông báo
+		$this->data['message'] = $message;
 		
-		
+		$fmessage = $this->session->flashdata('fmessage');					//$fmessage = dòng thông báo lỗi
+		$this->data['fmessage'] = $fmessage;
 		//Truyền biến sang view
 		$this->data['temp']= 'site/home/index';
 		$this->load->view('site/layout', $this->data);

@@ -8,11 +8,17 @@
 		<div class="wrapper">
 		<?php $this->load->view('site/header');?>
 		<?php $this->load->view('site/menu', $this->data);?>
+		<div class="container">
+			<div class="row">
+			<?php $this->load->view('site/alert', $this->data);?>
+			</div>
+		</div>
 		<?php if(isset($intro)) $this->load->view($intro, $this->data);?>
 		<?php if(isset($color)) $this->load->view($color, $this->data);?>
 		<div class="content container">
-		
+
       		<div class="row">
+      		
       			<div class="col-md-9 left">
       				<?php $this->load->view($temp , $this->data);?>
       			</div>
@@ -23,7 +29,7 @@
       		</div>
       		
       	</div>		
-		<?php $this->load->view('site/footer');?>
+		<?php $this->load->view('site/footer', $this->data);?>
 		</div>
 		
 			

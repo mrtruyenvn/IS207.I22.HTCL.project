@@ -2,8 +2,7 @@
 <div class="register">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<strong><a href="" title="Sản phẩm nổi bật"><h4>CHỈNH SỬA THÔNG TIN
-						MUA HÀNG</h4></a></strong>
+			<strong><a href="" title="Sản phẩm nổi bật"><h4>THÔNG TIN NGƯỜI NHẬN HÀNG</h4></a></strong>
 		</div>
 		<?php if(isset($user) && $user):?>
 		<div class="panel-body">

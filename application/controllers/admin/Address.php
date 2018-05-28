@@ -11,8 +11,7 @@ Class Address extends MY_Controller
 	{
 		$input = array();
 		$list = $this->address_model->get_list($input);
-		$this->data['list'] = $list;									
-		                                    									
+		$this->data['list'] = $list;											                                    									
 		
 		$message = $this->session->flashdata('message');					//$message = dòng thông báo 
 		$this->data['message'] = $message;
@@ -26,57 +25,36 @@ Class Address extends MY_Controller
 	}
 	function add()
 	{
-		//Lấy danh sách slide
-		$this->load->model('slide_model');
+		//Lấy danh sách liên hệ
 		$input = array();
-		$list = $this->slide_model->get_list($input);
+		$list = $this->address_model->get_list($input);
 		$this->data['list'] = $list;
-	
-		//Lấy danh sách màu sản phẩm
-		$this->load->model('color_model');
-		$input1 = array();
-		$color = $this->color_model->get_list($input1);
-		$this->data['color'] = $color;
 	
 		if($this->input->post())
 		{
 			//Tạo các tập luật
-			$this->form_validation->set_rules('name','Tên sản phẩm', 'required');
-			$this->form_validation->set_rules('price','Giá', 'required');
-			$this->form_validation->set_rules('new_price','Giá mới', 'required');
+			$this->form_validation->set_rules('title','Tiêu đề', 'required');
+			$this->form_validation->set_rules('address','Địa chỉ', 'required');
+			$this->form_validation->set_rules('phone','SĐT', 'required');
+			$this->form_validation->set_rules('describe','Mô tả', 'required');
+			
 			// Kiểm tra thỏa mãn điều kiện tập luật
 			if($this->form_validation->run())
 			{
-				$name = $this->input->post('name');
-				$keyword = $this->input->post('keyword');
-				$catalog_id = $this->input->post('catalog_id');
-				$color = $this->input->post('color');
-				$price = $this->input->post('price');
-				$new_price = $this->input->post('new_price');
+				$title = $this->input->post('title');
+				$address = $this->input->post('address');
+				$phone = $this->input->post('phone');
 				$describe = $this->input->post('describe');
+			
 	
-				//Lấy tên file ảnh và upload
-				$this->load->library('upload_library');
-				$upload_path = './upload/products';
-				$upload_data=$this->upload_library->upload($upload_path,'image_id');
-				$image_id='';
-				if(isset($upload_data['file_name']))
-				{
-					$image_id = $upload_data['file_name'];
-				}
-	
-	
+			
 				$data = array(
-						'name'     => $name,
-						'keyword' => $keyword,
-						'catalog_id' => $catalog_id,
-						'price' => intval($price),
-						'new_price' => intval($new_price),
-						'image_id' => $image_id,
+						'title'     => $title,
+						'address' => $address,
+						'phone' => $phone,
 						'describe' => $describe,
-						'color_id' => $color
 				);
-				if($this->products_model->create($data))
+				if($this->address_model->create($data))
 				{
 					$this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
 				}
@@ -84,10 +62,56 @@ Class Address extends MY_Controller
 				{
 					$this->session->set_flashdata('fmessage', 'Thêm mới dữ liệu KHÔNG thành công');
 				}
-				redirect(admin_url('products'));
+				redirect(admin_url('address'));
 			}
 		}
-		$this->data['temp']='admin/products/add';
+		$this->data['temp']='admin/address/add';
+		$this->load->view('admin/ad_layout',$this->data);
+	}
+	
+	function edit()
+	{
+		$id = intval($this->uri->rsegment(3));
+		//Lấy danh sách liên hệ
+		$addr = $this->address_model->get_info($id);
+		$this->data['addr'] = $addr;
+	
+		if($this->input->post())
+		{
+			//Tạo các tập luật
+			$this->form_validation->set_rules('title','Tiêu đề', 'required');
+			$this->form_validation->set_rules('address','Địa chỉ', 'required');
+			$this->form_validation->set_rules('phone','SĐT', 'required');
+			$this->form_validation->set_rules('describe','Mô tả', 'required');
+				
+			// Kiểm tra thỏa mãn điều kiện tập luật
+			if($this->form_validation->run())
+			{
+				$title = $this->input->post('title');
+				$address = $this->input->post('address');
+				$phone = $this->input->post('phone');
+				$describe = $this->input->post('describe');
+					
+	
+					
+				$data = array(
+						'title'     => $title,
+						'address' => $address,
+						'phone' => $phone,
+						'describe' => $describe,
+				);
+				if($this->address_model->update($id,$data))
+				{
+					$this->session->set_flashdata('message', 'Thêm mới dữ liệu thành công');
+				}
+				else
+				{
+					$this->session->set_flashdata('fmessage', 'Thêm mới dữ liệu KHÔNG thành công');
+				}
+				redirect(admin_url('address'));
+			}
+		}
+		$this->data['temp']='admin/address/edit';
 		$this->load->view('admin/ad_layout',$this->data);
 	}
 }

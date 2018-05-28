@@ -96,7 +96,11 @@ Class Products extends MY_Controller
 		$input['limit'] = array(8,0);		
 		$same_catalog = $this->products_model->get_list($input);
 		$this->data['same_catalog'] = $same_catalog;
-
+		
+		//Cập nhật lượt xem của sản phẩm
+		$data = array();
+		$data['view'] = $product->view + 1;
+		$this->products_model->update($product->id, $data);
 		
 		$this->data['temp'] = 'site/products/view';
 		$this->load->view('site/layout',$this->data);

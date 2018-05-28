@@ -2,7 +2,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>Admin Truyền Nguyễn</title>
+	<title>Admin Page</title>
 	<!-- Bootstrap && Style -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href="<?php echo public_url()?>css/bootstrap.min.css" rel="stylesheet">
